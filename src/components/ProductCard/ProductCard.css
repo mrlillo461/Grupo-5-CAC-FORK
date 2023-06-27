@@ -48,13 +48,12 @@ body {
   transform: translateY(-50%);
   z-index: 1000;
   width: 100%;
-  height: 100%;
+  height: 80%;
   transition: .5s;
 }
 
 .container .card:hover .card-img {
-  top: 0%;
-  transform: translateY(-25%);
+  transform: translateY(-70%);
 }
 
 .container .card .card-img img {
@@ -97,8 +96,21 @@ body {
   transform: translate(-20%, -30%) scale(0.6);
 }
 
-.container .card .card-content .size,
-.container .card .card-content .color {
+.container .card .card-content .card-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: .5s;
+}
+
+.container .card:hover .card-content .card-details {
+  transform: translateY(-35%);
+}
+
+.container .card .card-content .card-details .size,
+.container .card .card-content .card-details .color,
+.container .card .card-content .card-details .price {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,20 +120,27 @@ body {
   visibility: hidden;
 }
 
-.container .card:hover .card-content .size {
+.container .card:hover .card-content .card-details .size {
   opacity: 1;
   visibility: visible;
   transition-delay: .6s;
 }
 
-.container .card:hover .card-content .color {
+.container .card:hover .card-content .card-details .color {
   opacity: 1;
   visibility: visible;
   transition-delay: .7s;
 }
 
-.container .card .card-content .size h3,
-.container .card .card-content .color h3 {
+.container .card:hover .card-content .card-details .price {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: .8s;
+}
+
+.container .card .card-content .card-details .size h3,
+.container .card .card-content .card-details .color h3,
+.container .card .card-content .card-details .price h3 {
   color: white;
   font-weight: 300;
   font-size: 14px;
@@ -130,7 +149,14 @@ body {
   margin-right: 10px;
 }
 
-.container .card .card-content .size span {
+.container .card .card-content .card-details .price h3 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+
+.container .card .card-content .card-details .size span {
   width: 26px;
   height: 26px;
   text-align: center;
@@ -139,45 +165,32 @@ body {
   display: inline-block;
   color: #111;
   background: #fff;
+  font-weight: 500;
   margin: 0 5px;
   transition: .5s;
-  color: #111;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.container .card .card-content .size span:hover {
-  /* other bug */
-  background: #B90000;
+.container .card .card-content .card-details .size span:hover {
+  color: #fff;
+  background: #111;
 }
 
-.container .card .card-content .color span {
+.container .card .card-content .card-details .color span {
   width: 20px;
   height: 20px;
-  background: #ff0;
+  background: #906A37;
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
 }
 
-.container .card .card-content .color span:nth-child(2) {
-  background: #1BBFE9;
-}
-
-.container .card .card-content .color span:nth-child(3) {
-  background: #1B2FE9;
-}
-
-.container .card .card-content .color span:nth-child(4) {
-  background: #080481;
-}
-
 .container .card .card-content a {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px 20px;
   background: #fff;
-  border-radius: 4px;
-  margin-top: 10px;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 600;
   color: #111;
@@ -188,6 +201,6 @@ body {
 
 .container .card:hover .card-content a {
   opacity: 1;
-  transform: translateY(0px);
-  transition-delay: .8s;
+  transform: translateY(-80%);
+  transition-delay: .9s;
 }

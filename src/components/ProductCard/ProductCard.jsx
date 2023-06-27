@@ -12,13 +12,18 @@ function ProductCard() {
         </div>
         <div className="card-content">
          <h2 className="card-title">Air Max 1</h2>
-         <div className="size">
-           <h3>Size :</h3>
-           <span>42</span>
-         </div>
-         <div className="color">
-           <h3>Color :</h3>
-           <span></span>
+         <div className="card-details">
+           <div className="size">
+             <h3>Size :</h3>
+             <span>42</span>
+           </div>
+           <div className="color">
+             <h3>Color :</h3>
+            <span></span>
+          </div>
+          <div className="price">
+            <h3>$ 35.500</h3>
+          </div>
          </div>
          <Link to={`/product/1`}>More Details</Link>
        </div>

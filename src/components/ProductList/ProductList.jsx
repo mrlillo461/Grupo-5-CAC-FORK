@@ -24,10 +24,10 @@ function ProductList() {
   }, []);
 
   return (
-    <Container>
-      <Row className="py-5">
+    <Container fluid className="mt-3">
+      <Row className="pt-5">
       {productos?.map((producto ) => (
-        <Col key={producto.id} className="py-1" md="6" lg="4" xxl="3">
+        <Col key={producto.id} className="pt-5 px-3">
         <ProductCard 
         modelo={producto.modelo}
         talle={producto.talle}
